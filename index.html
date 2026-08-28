@@ -61,6 +61,9 @@
     font-size: 12px; font-weight: 600; color: var(--ink-mid);
   }
   .tag-accent { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  a.tag { text-decoration: none; cursor: pointer; transition: all 0.15s; }
+  a.tag:hover { border-color: var(--blue); color: var(--blue); }
+  a.tag.pin-link:hover { border-color: #E60023; color: #E60023; }
 
   /*  DIVIDER  */
   .divider { height: 1px; background: var(--border); margin: 44px 0; }
@@ -91,6 +94,7 @@
     line-height: 1; color: var(--ink); margin-bottom: 4px;
   }
   .kpi-cell:first-child .kpi-value { color: var(--blue); }
+  .kpi-value.highlight { color: var(--blue); font-size: 33px; }
   .kpi-sub { font-size: 11px; color: var(--ink-faint); font-weight: 500; }
 
   /*  CREATIVE  */
@@ -327,9 +331,13 @@
     <div class="tag">Juillet → Août 2026</div>
     <div class="tag">19 visuels testés</div>
   </div>
+  <div class="header-tags" style="margin-top:10px;">
+    <a href="#meta" class="tag">META</a>
+    <a href="#pinterest" class="tag pin-link">PINTEREST</a>
+  </div>
 </div>
 
-<div class="part-banner">Partie 1 <span class="chip">Meta Ads</span></div>
+<div class="part-banner" id="meta">Partie 1 <span class="chip">Meta Ads</span></div>
 <div class="header-tags" style="margin-bottom:32px;">
   <div class="tag tag-accent">Objectif : trafic (clics vers Amazon)</div>
   <div class="tag">09/07/2026 → 23/08/2026</div>
@@ -341,14 +349,14 @@
 <div class="section-label">Résultats globaux</div>
 <div class="kpi-strip">
   <div class="kpi-cell">
+    <div class="kpi-label">Clics vers Amazon</div>
+    <div class="kpi-value highlight">66 516</div>
+    <div class="kpi-sub">clics sur les publicités</div>
+  </div>
+  <div class="kpi-cell">
     <div class="kpi-label">Impressions</div>
     <div class="kpi-value">7,54M</div>
     <div class="kpi-sub">7 537 065 au total</div>
-  </div>
-  <div class="kpi-cell">
-    <div class="kpi-label">Clics vers Amazon</div>
-    <div class="kpi-value">66 516</div>
-    <div class="kpi-sub">clics sur les publicités</div>
   </div>
   <div class="kpi-cell">
     <div class="kpi-label">CTR moyen</div>
@@ -693,7 +701,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
   <strong>Ce que dit la comparaison.</strong> Face à septembre 2025, cette campagne progresse sur presque tous les indicateurs. 3,7 fois plus de clics (66 516 contre 18 052) pour seulement 50 % de budget supplémentaire, un coût par clic quasiment divisé par deux (0,045 € contre 0,11 €), et un coût pour toucher mille personnes divisé par 4 (0,40 € contre 1,70 €). Une bonne partie de ce progrès vient d'un choix structurel qu'on a fait cette année : en 2025, la diffusion était répartie sur trois ensembles de publicités (Facebook, Instagram, Vidéo) qui ciblaient des audiences proches et se concurrençaient entre eux dans les enchères Meta. Cette année, tout est regroupé dans un seul ensemble avec 13 visuels, ce qui laisse l'algorithme optimiser sur un budget plus large sans se faire concurrence à lui-même, un ajustement qu'on retient pour la suite. Seul le taux de clic moyen recule légèrement (0,88 % contre 1,54 %), ce qui reste cohérent avec un volume six fois supérieur touchant une audience plus large. Autre bon signal : le format vidéo, déjà le plus efficace en 2025 (coût par clic de 0,096 €), continue de progresser cette année avec un taux de clic porté à 3,08 % contre 1,06 % en 2025.
 </div>
 
-<div class="part-banner">Partie 2 <span class="chip pin">Pinterest Ads</span></div>
+<div class="part-banner" id="pinterest">Partie 2 <span class="chip pin">Pinterest Ads</span></div>
 <div class="header-tags" style="margin-bottom:32px;">
   <div class="tag tag-accent">Objectif : considération</div>
   <div class="tag">20/07/2026 → 24/08/2026</div>
@@ -705,14 +713,14 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 <div class="section-label">Résultats globaux · Pinterest</div>
 <div class="kpi-strip">
   <div class="kpi-cell">
+    <div class="kpi-label">Clics sur l'épingle</div>
+    <div class="kpi-value highlight">10 394</div>
+    <div class="kpi-sub">dont 10 316 clics sortants</div>
+  </div>
+  <div class="kpi-cell">
     <div class="kpi-label">Impressions</div>
     <div class="kpi-value">1,75M</div>
     <div class="kpi-sub">1 751 417 au total</div>
-  </div>
-  <div class="kpi-cell">
-    <div class="kpi-label">Clics sur l'épingle</div>
-    <div class="kpi-value">10 394</div>
-    <div class="kpi-sub">dont 10 316 clics sortants</div>
   </div>
   <div class="kpi-cell">
     <div class="kpi-label">Taux de clic moyen</div>
@@ -976,8 +984,8 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
   </div>
   <div class="cmp-row">
     <div class="cmp-cell lbl">Taux de clic moyen</div>
-    <div class="cmp-cell val">0,43 %</div>
-    <div class="cmp-cell val" style="color:#15803d;">0,59 % <span class="cmp-delta up">+0,16 pt</span></div>
+    <div class="cmp-cell val">0,47 %</div>
+    <div class="cmp-cell val" style="color:#15803d;">0,59 % <span class="cmp-delta up">+0,12 pt</span></div>
   </div>
   <div class="cmp-row alt">
     <div class="cmp-cell lbl">CPM moyen</div>
@@ -997,7 +1005,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 </div>
 
 <div class="cmp-note">
-  <strong>Ce que dit la comparaison.</strong> Le budget Pinterest recule d'un tiers cette année (2 000 € contre 3 000 €), ce qui explique l'essentiel du repli en volume : impressions en baisse de 36 % (1 751 417 contre 2 720 863) et clics sortants en baisse de 20 % (10 316 contre 12 884). Mais à budget réduit, l'efficacité progresse : le taux de clic moyen passe de 0,43 % à 0,59 %, et le coût par clic recule de 17 % (0,19 € contre 0,23 €), pour un coût pour mille vues quasiment stable (1,14 € contre 1,10 €). Un changement de dynamique côté formats mérite d'être noté : en 2025, c'est la vidéo qui portait l'essentiel de la performance (près de 70 % des clics, CTR 0,58 %) ; en 2026, ce sont les visuels fixes qui dominent, portés par le bocal signature (0,86 %) et les petits pois (0,69 %), la vidéo verger n'arrivant qu'en 5e position (0,60 %). Un levier à retester avec un nouveau format vidéo pour la prochaine vague.
+  <strong>Ce que dit la comparaison.</strong> Le budget Pinterest recule d'un tiers cette année (2 000 € contre 3 000 €), ce qui explique l'essentiel du repli en volume : impressions en baisse de 36 % (1 751 417 contre 2 720 863) et clics sortants en baisse de 20 % (10 316 contre 12 884). Mais à budget réduit, l'efficacité progresse : le taux de clic moyen passe de 0,47 % à 0,59 %, et le coût par clic recule de 17 % (0,19 € contre 0,23 €), pour un coût pour mille vues quasiment stable (1,14 € contre 1,10 €). Un changement de dynamique côté formats mérite d'être noté : en 2025, c'est la vidéo qui portait l'essentiel de la performance (près de 70 % des clics, CTR 0,58 %) ; en 2026, ce sont les visuels fixes qui dominent, portés par le bocal signature (0,86 %) et les petits pois (0,69 %), la vidéo verger n'arrivant qu'en 5e position (0,60 %). Un levier à retester avec un nouveau format vidéo pour la prochaine vague.
 </div>
 
 <div style="text-align:center;padding:40px 0 16px;">
