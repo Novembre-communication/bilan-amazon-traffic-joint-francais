@@ -368,7 +368,7 @@
 
     /*  TABLEAUX → défilement horizontal, la note reste fixe  */
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    .camp-table { min-width: 640px; font-size: 12px; }
+    .camp-table { min-width: 720px; font-size: 12px; }
     .camp-table thead th { padding: 12px 12px; font-size: 9px; letter-spacing: 1px; }
     .camp-table td { padding: 10px 12px; }
     .table-wrap { margin-bottom: 36px; }
@@ -574,12 +574,12 @@ window.addEventListener('load', function(){ buildDots(); update(); });
 </script>
 <script>
 var pinSlides = [
-  { name: 'Visuel bocal signature', tag: 'Meilleur taux de clic', stats: [['0,86 %','Taux de clic'],['0,87 %','Engagement'],['0,85 %','Taux de clic sortant']] },
-  { name: 'Visuel petits pois', tag: '2e taux de clic', stats: [['0,69 %','Taux de clic'],['0,75 %','Engagement'],['0,74 %','Taux de clic sortant']] },
-  { name: 'Visuel guide des tailles', tag: '3e taux de clic', stats: [['0,65 %','Taux de clic'],['0,66 %','Engagement'],['0,64 %','Taux de clic sortant']] },
-  { name: 'Visuel prunes', tag: '4e taux de clic', stats: [['0,63 %','Taux de clic'],['0,64 %','Engagement'],['0,62 %','Taux de clic sortant']] },
-  { name: 'Vidéo verger & contrôle qualité', tag: '5e taux de clic', stats: [['0,60 %','Taux de clic'],['0,62 %','Engagement'],['0,58 %','Taux de clic sortant']] },
-  { name: 'Visuel cerises', tag: '6e taux de clic', stats: [['0,41 %','Taux de clic'],['0,42 %','Engagement'],['0,41 %','Taux de clic sortant']] }
+  { name: 'Visuel bocal signature', tag: 'Meilleur taux de clic', stats: [['1 123','Clics'],['0,86 %','Taux de clic'],['0,174 €','CPC']] },
+  { name: 'Visuel petits pois', tag: '2e taux de clic', stats: [['648','Clics'],['0,69 %','Taux de clic'],['0,180 €','CPC']] },
+  { name: 'Visuel guide des tailles', tag: '3e taux de clic', stats: [['2 250','Clics'],['0,65 %','Taux de clic'],['0,199 €','CPC']] },
+  { name: 'Visuel prunes', tag: '4e taux de clic', stats: [['2 176','Clics'],['0,63 %','Taux de clic'],['0,182 €','CPC']] },
+  { name: 'Vidéo verger & contrôle qualité', tag: '5e taux de clic', stats: [['2 484','Clics'],['0,60 %','Taux de clic'],['0,212 €','CPC']] },
+  { name: 'Visuel cerises', tag: '6e taux de clic', stats: [['1 713','Clics'],['0,41 %','Taux de clic'],['0,184 €','CPC']] }
 ];
 var pinIdx = 0;
 function pinRenderCaption(i){
@@ -840,7 +840,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
   <div class="kpi-cell">
     <div class="kpi-label">Coût par clic moyen</div>
     <div class="kpi-value">0,19 &euro;</div>
-    <div class="kpi-sub">sur les 10 316 clics sortants</div>
+    <div class="kpi-sub">2 000 € ÷ 10 394 clics</div>
   </div>
 </div>
 
@@ -897,7 +897,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
       </div>
     </div>
     <div class="info-note">
-      Sur les <strong>2 000 €</strong> investis, la campagne Pinterest a généré <strong>1 751 417</strong> vues et <strong>10 394</strong> clics sur les épingles, pour un taux de clic moyen de 0,59 %. Trois visuels portent l'essentiel de la performance : le <strong>bocal signature</strong>, les <strong>petits pois</strong> et le <strong>guide des tailles</strong> affichent les meilleurs taux de clic de la campagne. En tête, le bocal signature atteint <strong>0,86 %</strong>, près de 1,5 fois la moyenne.
+      Sur les <strong>2 000 €</strong> investis, la campagne Pinterest a généré <strong>1 751 417</strong> vues et <strong>10 394</strong> clics sur les épingles, pour un taux de clic moyen de 0,59 %. Deux lectures se complètent. En volume, la <strong>vidéo</strong> (2 484 clics) et le <strong>guide des tailles</strong> (2 250 clics) génèrent à eux deux <strong>45 %</strong> des clics de la campagne. En efficacité, ce sont le <strong>bocal signature</strong> (0,86 %) et les <strong>petits pois</strong> (0,69 %) qui signent les meilleurs taux de clic, avec des budgets pourtant deux à quatre fois plus faibles.
     </div>
   </div>
 </div>
@@ -911,64 +911,96 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
       <tr>
         <th>Rang</th>
         <th>Visuel</th>
+        <th>Impressions</th>
+        <th>CPM</th>
+        <th>Dépense</th>
+        <th>CPC</th>
+        <th>Clics</th>
         <th>Taux de clic</th>
         <th>Engagement</th>
-        <th>Taux de clic sortant</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><span class="rank-badge r1">1</span></td>
-        <td>Visuel bocal signature</td>
+        <td class="imp-strong">Visuel bocal signature</td>
+        <td>131 002</td>
+        <td>1,49 €</td>
+        <td>195,40 €</td>
+        <td>0,174 €</td>
+        <td class="imp-strong">1 123</td>
         <td class="imp-strong">0,86 %</td>
         <td>0,87 %</td>
-        <td>0,85 %</td>
       </tr>
       <tr>
         <td><span class="rank-badge rn">2</span></td>
-        <td>Visuel petits pois</td>
+        <td class="imp-strong">Visuel petits pois</td>
+        <td>94 394</td>
+        <td>1,24 €</td>
+        <td>116,76 €</td>
+        <td>0,180 €</td>
+        <td class="imp-strong">648</td>
         <td class="imp-strong">0,69 %</td>
         <td>0,75 %</td>
-        <td>0,74 %</td>
       </tr>
       <tr>
         <td><span class="rank-badge rn">3</span></td>
-        <td>Visuel guide des tailles</td>
+        <td class="imp-strong">Visuel guide des tailles</td>
+        <td>346 318</td>
+        <td>1,29 €</td>
+        <td>448,07 €</td>
+        <td>0,199 €</td>
+        <td class="imp-strong">2 250</td>
         <td class="imp-strong">0,65 %</td>
         <td>0,66 %</td>
-        <td>0,64 %</td>
       </tr>
       <tr>
         <td><span class="rank-badge rn">4</span></td>
         <td>Visuel prunes</td>
+        <td>345 450</td>
+        <td>1,15 €</td>
+        <td>396,54 €</td>
+        <td>0,182 €</td>
+        <td class="imp-strong">2 176</td>
         <td class="imp-strong">0,63 %</td>
         <td>0,64 %</td>
-        <td>0,62 %</td>
       </tr>
       <tr>
         <td><span class="rank-badge rn">5</span></td>
-        <td>Vidéo verger & contrôle qualité</td>
+        <td>Vidéo verger &amp; contrôle qualité</td>
+        <td>411 705</td>
+        <td>1,28 €</td>
+        <td>526,31 €</td>
+        <td>0,212 €</td>
+        <td class="imp-strong">2 484</td>
         <td class="imp-strong">0,60 %</td>
         <td>0,62 %</td>
-        <td>0,58 %</td>
       </tr>
       <tr>
         <td><span class="rank-badge rn">6</span></td>
         <td>Visuel cerises</td>
+        <td>422 548</td>
+        <td>0,75 €</td>
+        <td>315,70 €</td>
+        <td>0,184 €</td>
+        <td class="imp-strong">1 713</td>
         <td class="imp-strong">0,41 %</td>
         <td>0,42 %</td>
-        <td>0,41 %</td>
       </tr>
       <tr class="total-row">
-        <td colspan="2">Moyenne campagne</td>
+        <td colspan="2">Total · 6 visuels</td>
+        <td>1 751 417</td>
+        <td>1,14 €</td>
+        <td>2 000 €</td>
+        <td>0,19 €</td>
+        <td>10 394</td>
         <td>0,59 %</td>
         <td>0,61 %</td>
-        <td>0,59 %</td>
       </tr>
     </tbody>
   </table>
   </div>
-  <div class="table-foot-note">Les visuels Pinterest sont mesurés en taux (clic, engagement, clic sortant) et non en volumes : Pinterest ne communique pas le détail des impressions ou des clics par visuel.</div>
+  <div class="table-foot-note">Volumes issus de l'export Pinterest Ads Manager par annonce. Le taux de clic est recalculé (clics ÷ impressions) ; la colonne « taux de clic sortant » a été retirée, les valeurs fournies par Pinterest étant incohérentes avec le taux de clic sur certains visuels.</div>
 </div>
 
 <!--  DÉMOGRAPHIE PINTEREST  -->
@@ -1059,12 +1091,12 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 <div class="section-label">Analyse &amp; recommandations · Pinterest</div>
 <div class="reco-section">
   <div class="reco-summary">
-    Sur la période du 20/07 au 24/08/2026, la campagne Pinterest a investi <strong>2 000 €</strong> pour <strong>1 751 417 vues</strong>, <strong>10 394 clics</strong> sur les épingles et <strong>10 316 clics sortants</strong> vers le site, pour un taux de clic moyen de 0,59 %. Le <strong>bocal signature</strong> obtient le meilleur score de la campagne, avec un taux de clic de 0,86 % et un taux d'engagement de 0,87 %, suivi par les <strong>petits pois</strong> (0,69 %) et le <strong>guide des tailles</strong> (0,65 %). Le visuel <strong>cerises</strong> ferme le classement avec un taux de clic de 0,41 %.
+    Sur la période du 20/07 au 24/08/2026, la campagne Pinterest a investi <strong>2 000 €</strong> pour <strong>1 751 417 vues</strong>, <strong>10 394 clics</strong> sur les épingles et <strong>10 316 clics sortants</strong> vers le site, pour un taux de clic moyen de 0,59 %. Le <strong>bocal signature</strong> obtient le meilleur taux de clic de la campagne (<strong>0,86 %</strong>, engagement 0,87 %) pour seulement 195,40 € investis, suivi par les <strong>petits pois</strong> (0,69 %) et le <strong>guide des tailles</strong> (0,65 %). En volume, c'est la <strong>vidéo</strong> qui domine avec <strong>2 484 clics</strong>, devant le guide des tailles (2 250) et les prunes (2 176). Le visuel <strong>cerises</strong> ferme le classement en taux de clic (0,41 %) alors qu'il a absorbé le plus gros volume de diffusion de la campagne (422 548 vues).
   </div>
   <div class="reco-grid">
     <div class="reco-card">
       <div class="reco-card-title"><div class="reco-dot" style="background:var(--blue);"></div>Renforcer les visuels produit clairs</div>
-      <div class="reco-card-body">Le bocal signature et le guide des tailles, les deux visuels les plus clairs sur l'usage du produit, obtiennent les meilleurs taux de clic. Décliner davantage ce type de visuel pour la prochaine vague, et tester une version vidéo pour capter l'attention plus tôt.</div>
+      <div class="reco-card-body">Le bocal signature (0,86 %) et les petits pois (0,69 %) signent les meilleurs taux de clic avec les plus petits budgets de la campagne (195 € et 117 €). À l'inverse, le visuel cerises a absorbé le plus gros volume de diffusion (422 548 vues) pour le taux le plus faible (0,41 %). Rééquilibrer le budget vers les visuels les plus efficaces dès le lancement de la prochaine vague.</div>
     </div>
     <div class="reco-card">
       <div class="reco-card-title"><div class="reco-dot" style="background:#E60023;"></div>Prioriser mobile et 65 ans et plus</div>
@@ -1090,9 +1122,9 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
     <div class="cmp-cell val">1 751 417 <span class="cmp-delta flat">-36 %</span></div>
   </div>
   <div class="cmp-row alt">
-    <div class="cmp-cell lbl">Clics sortants</div>
+    <div class="cmp-cell lbl">Clics</div>
     <div class="cmp-cell val">12 884</div>
-    <div class="cmp-cell val">10 316 <span class="cmp-delta flat">-20 %</span></div>
+    <div class="cmp-cell val">10 394 <span class="cmp-delta flat">-19 %</span></div>
   </div>
   <div class="cmp-row">
     <div class="cmp-cell lbl">Taux de clic moyen</div>
@@ -1117,7 +1149,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 </div>
 
 <div class="cmp-note">
-  <strong>Ce que dit la comparaison.</strong> Le budget Pinterest recule d'un tiers cette année (2 000 € contre 3 000 €), ce qui explique l'essentiel du repli en volume : impressions en baisse de 36 % (1 751 417 contre 2 720 863) et clics sortants en baisse de 20 % (10 316 contre 12 884). Mais à budget réduit, l'efficacité progresse : le taux de clic moyen passe de 0,47 % à 0,59 %, et le coût par clic recule de 17 % (0,19 € contre 0,23 €), pour un coût pour mille vues quasiment stable (1,14 € contre 1,10 €). Un changement de dynamique côté formats mérite d'être noté : en 2025, c'est la vidéo qui portait l'essentiel de la performance (près de 70 % des clics, CTR 0,58 %) ; en 2026, ce sont les visuels fixes qui dominent, portés par le bocal signature (0,86 %) et les petits pois (0,69 %), la vidéo verger n'arrivant qu'en 5e position (0,60 %). Un levier à retester avec un nouveau format vidéo pour la prochaine vague.
+  <strong>Ce que dit la comparaison.</strong> Le budget Pinterest recule d'un tiers cette année (2 000 € contre 3 000 €), ce qui explique l'essentiel du repli en volume : impressions en baisse de 36 % (1 751 417 contre 2 720 863) et clics en baisse de 19 % (10 394 contre 12 884). Mais à budget réduit, l'efficacité progresse : le taux de clic moyen passe de 0,47 % à 0,59 %, et le coût par clic recule de 17 % (0,19 € contre 0,23 €), pour un coût pour mille vues quasiment stable (1,14 € contre 1,10 €). Le rôle de la vidéo évolue : elle reste le premier générateur de clics en 2026 (2 484 clics, soit 24 % du total, avec un taux de clic de 0,60 % contre 0,58 % en 2025), mais elle ne concentre plus la performance comme en 2025 où elle pesait près de 70 % des clics. Les visuels fixes ont nettement progressé et signent désormais les meilleurs taux de clic, portés par le bocal signature (0,86 %) et les petits pois (0,69 %) — deux visuels diffusés sur de petits volumes, donc à réamplifier pour la prochaine vague.
 </div>
 
 <div style="text-align:center;padding:40px 0 16px;">
