@@ -317,6 +317,114 @@
     font-size: 10px; font-weight: 800; letter-spacing: 3px;
     text-transform: uppercase; color: var(--blue); margin-bottom: 6px;
   }
+
+  /* ============================================================
+     VERSION MOBILE — n'affecte que les écrans < 860px.
+     Le rendu desktop reste strictement inchangé.
+     ============================================================ */
+  @media (max-width: 860px) {
+
+    body { padding: 28px 16px; }
+
+    /*  HEADER  */
+    .header { margin-bottom: 36px; }
+    .header-eyebrow { font-size: 9px; letter-spacing: 1.6px; margin-bottom: 12px; }
+    .header-title { font-size: 30px; letter-spacing: -1px; line-height: 1.06; }
+    .header-sub { font-size: 13.5px; margin-bottom: 18px; }
+    .header-tags { gap: 8px; }
+    .tag { font-size: 11.5px; padding: 5px 12px; }
+
+    .divider { margin: 32px 0; }
+    .section-label { font-size: 9.5px; letter-spacing: 2px; margin-bottom: 14px; }
+
+    /*  PART BANNER  */
+    .part-banner {
+      flex-wrap: wrap; gap: 10px; padding: 14px 18px;
+      font-size: 11px; letter-spacing: 1.4px; margin: 8px 0 24px;
+    }
+
+    /*  KPI STRIP → 2 colonnes  */
+    .kpi-strip { grid-template-columns: repeat(2, 1fr); margin-bottom: 36px; }
+    .kpi-cell { padding: 20px 16px; }
+    .kpi-cell:first-child,
+    .kpi-cell:last-child { border-radius: 0; }
+    .kpi-label { font-size: 9px; letter-spacing: 1.4px; margin-bottom: 8px; }
+    .kpi-value { font-size: 24px; letter-spacing: -0.6px; }
+    .kpi-value.highlight { font-size: 27px; }
+    .kpi-sub { font-size: 10.5px; line-height: 1.4; }
+
+    /*  CRÉATIVE → 1 colonne  */
+    .creative-section { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+    .carousel-img { height: 460px; }
+    .metrics-right { padding-top: 0; }
+
+    /*  MÉTRIQUES  */
+    .metric-item { padding: 16px 0; padding-right: 8px; }
+    .metric-item:not(:last-child) { margin-right: 8px; }
+    .metric-item .m-label { font-size: 8.5px; letter-spacing: 1px; margin-bottom: 6px; }
+    .metric-item .m-value { font-size: 16px; letter-spacing: -0.3px; }
+    .info-note { font-size: 12px; padding: 13px 15px; margin-top: 20px; }
+    .visual-note { font-size: 11.5px; }
+
+    /*  TABLEAUX → défilement horizontal, la note reste fixe  */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .camp-table { min-width: 640px; font-size: 12px; }
+    .camp-table thead th { padding: 12px 12px; font-size: 9px; letter-spacing: 1px; }
+    .camp-table td { padding: 10px 12px; }
+    .table-wrap { margin-bottom: 36px; }
+    .table-foot-note { font-size: 10.5px; padding: 11px 15px; }
+    /*  Le nom du visuel reste visible pendant le défilement  */
+    .camp-table thead th:nth-child(2),
+    .camp-table tbody tr:not(.total-row) td:nth-child(2) {
+      position: sticky; left: 0; z-index: 2;
+      background: var(--white); box-shadow: 1px 0 0 #f0f1f7;
+    }
+    .camp-table tbody tr:hover { background: transparent; }
+
+    /*  DÉMOGRAPHIE → 1 colonne  */
+    .demo-section { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+    .demo-card { padding: 22px 20px; }
+    .age-row { grid-template-columns: 74px 1fr 46px; gap: 10px; }
+    .age-label { font-size: 11.5px; }
+    .age-pct { font-size: 11.5px; }
+    .gender-cell { padding: 16px 12px; }
+    .gender-cell .g-value { font-size: 26px; }
+    .gender-cell .g-sub { font-size: 10px; }
+    .device-row { font-size: 12px; }
+
+    /*  RECOMMANDATIONS → 1 colonne  */
+    .reco-summary { padding: 22px 20px; font-size: 12.5px; line-height: 1.75; }
+    .reco-grid { grid-template-columns: 1fr; }
+    .reco-card { padding: 18px 20px; }
+
+    /*  COMPARAISON → libellé au-dessus, 2 valeurs en dessous  */
+    .cmp-row { grid-template-columns: 1fr 1fr; }
+    .cmp-head .cmp-cell.lbl { display: none; }
+    .cmp-row .cmp-cell.lbl {
+      grid-column: 1 / -1;
+      padding: 12px 16px 2px;
+      font-size: 9.5px; letter-spacing: 0.8px;
+    }
+    .cmp-cell { padding: 10px 16px 14px; }
+    .cmp-cell.hd { padding: 13px 16px; font-size: 11.5px; }
+    .cmp-cell.val { font-size: 14px; }
+    .cmp-cell.hd:nth-child(2),
+    .cmp-cell.val:nth-child(2) { border-left: none; }
+    .cmp-delta { margin-left: 6px; font-size: 10px; padding: 2px 7px; }
+    .cmp-note { padding: 16px 18px; font-size: 12px; line-height: 1.75; margin-bottom: 32px; }
+
+    /*  FOOTER  */
+    .footer { font-size: 10.5px; line-height: 1.6; }
+  }
+
+  /*  Très petits écrans  */
+  @media (max-width: 400px) {
+    .header-title { font-size: 26px; }
+    .kpi-value { font-size: 21px; }
+    .kpi-value.highlight { font-size: 24px; }
+    .metric-item .m-value { font-size: 14px; }
+    .carousel-img { height: 420px; }
+  }
 </style>
 </head>
 <body>
@@ -512,6 +620,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 <!--  TABLEAU  -->
 <div class="section-label">Classement des visuels · clics décroissants</div>
 <div class="table-wrap">
+  <div class="table-scroll">
   <table class="camp-table">
     <thead>
       <tr>
@@ -550,6 +659,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
       </tr>
     </tbody>
   </table>
+  </div>
   <div class="table-foot-note">Couverture et fréquence par visuel valables individuellement ; les totaux (~) cumulent les 13 visuels avec recoupements possibles, sans déduplication globale.</div>
 </div>
 
@@ -795,6 +905,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
 <!--  CLASSEMENT PINTEREST  -->
 <div class="section-label">Classement des visuels · taux de clic décroissant</div>
 <div class="table-wrap">
+  <div class="table-scroll">
   <table class="camp-table">
     <thead>
       <tr>
@@ -856,6 +967,7 @@ window.addEventListener('load', function(){ pinBuildDots(); pinUpdate(); });
       </tr>
     </tbody>
   </table>
+  </div>
   <div class="table-foot-note">Les visuels Pinterest sont mesurés en taux (clic, engagement, clic sortant) et non en volumes : Pinterest ne communique pas le détail des impressions ou des clics par visuel.</div>
 </div>
 
